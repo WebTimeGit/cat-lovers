@@ -1,0 +1,22 @@
+@import '../../scss/variables';
+
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+
+	@media screen and (max-width: $tabletWidth) {
+		display: grid;
+		grid-template-areas:
+                'logo switcher'
+                'userName userName';
+	}
+	@media screen and (max-width: 768px) {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.logo {
+		grid-area: logo;
+	}
+}

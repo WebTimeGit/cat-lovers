@@ -1,0 +1,29 @@
+@import "../../../../scss/variables";
+
+.refreshBtn {
+  width: 40px;
+  height: 40px;
+  background: var(--bg_dark_grey__white);
+  @include flex(center, center);
+  border: 2px solid var(--bg_input_search);
+  border-radius: 10px;
+  right: 0;
+  cursor: pointer;
+  outline: none;
+  flex-grow: 0;
+
+  img {
+    @include transition();
+  }
+
+  &:hover {
+    img {
+      @include transition();
+      rotate: 60deg;
+    }
+  }
+
+  &:active {
+    transform: scale(.95);
+  }
+}

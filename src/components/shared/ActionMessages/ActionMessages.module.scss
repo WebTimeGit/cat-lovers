@@ -1,0 +1,55 @@
+@import "../../../scss/variables";
+
+.wrapper {
+  background: var(--bg_color);
+  border-radius: 10px;
+  @include flex(flex-start, center);
+  padding: 15px 60px 15px 15px;
+  height: 60px;
+  position: relative;
+  margin-bottom: 10px;
+
+  @media screen and (max-width: $mobileWidth) {
+    display: block;
+    height: auto;
+    padding: 15px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.time, .description {
+  display: inline-block;
+
+  @media screen and (max-width: 425px) {
+    margin-top: 10px;
+  }
+}
+
+.time {
+  background: var(--bg_blackWhite);
+  padding: 3px 10px;
+  margin-right: 20px;
+  border-radius: 10px;
+  color: var(--title_color);
+}
+
+.descId {
+  color: var(--title_color);
+}
+
+.iconWrapper {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 20px;
+  right: 20px;
+
+  svg {
+    fill: #97EAB9;
+  }
+}
+

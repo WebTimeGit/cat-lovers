@@ -1,0 +1,17 @@
+@import "src/scss/variables";
+
+.wrapper {
+  margin: 0 auto;
+  @include flex(space-between);
+  max-width: 1440px;
+  min-height: 100vh;
+  max-height: 100vh;
+  padding: 30px;
+  overflow: hidden;
+  gap: 20px;
+
+
+  @media screen and (max-width: $tabletWidth) {
+    padding: 30px 15px 30px 15px;
+  }
+}

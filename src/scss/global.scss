@@ -1,0 +1,61 @@
+@import "variables";
+
+.App {
+  opacity: 0;
+  min-height: 100%;
+  transition: all 2s ease;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, .6);
+    z-index: 50;
+    opacity: 0;
+    transition: all .8s ease;
+    pointer-events: none;
+  }
+
+  &.overlay::before {
+    opacity: 1;
+    transition: all .8s ease;
+    pointer-events: initial;
+  }
+}
+
+.fadeIn {
+  opacity: 1;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 58px;
+  color: var(--title_color);
+
+  @media screen and (max-width: 1030px) {
+    font-size: 38px;
+    line-height: 50px;
+  }
+}
+
+.btn {
+  padding: 10px 10px;
+  background: var(--bg_white-grey);
+  color: var(--btn_color);
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  @include transition();
+  user-select: none;
+}
+
+button, label {
+  &:focus-visible {
+    outline: 2px solid $main_color !important;
+  }
+}

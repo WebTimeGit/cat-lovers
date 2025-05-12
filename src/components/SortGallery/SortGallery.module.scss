@@ -1,0 +1,32 @@
+@import "../../scss/variables";
+
+.wrapper {
+  width: 100%;
+  @include flex(space-between, center);
+  background: var(--bg_grey-white_white-rgba);
+  border-radius: 20px;
+  padding: 24px 26px 20px 26px;
+  margin-bottom: 20px;
+  gap: 10px;
+
+  @media screen and (max-width: $mobileWidth) {
+    @include flex(space-between, center, column);
+    padding: 28px 10px 28px 10px;
+    gap: 0;
+    row-gap: 28px;
+  }
+
+  .left, .right {
+    width: 100%;
+    @include flex(flex-start, null, column);
+    gap: 24px;
+  }
+
+  :global(.select__control) {
+    background: var(--bg_white-grey) !important;
+  }
+
+  :global(.select__menu-list) {
+    background: var(--bg_white-grey) !important;
+  }
+}

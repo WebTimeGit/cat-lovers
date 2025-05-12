@@ -1,0 +1,137 @@
+@import "../../scss/variables";
+
+.wrapper {
+  padding: 20px;
+  background: var(--bg_white-grey);
+  border-radius: 20px;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  .mainSlider {
+    width: 100%;
+    @include flex(center, center);
+
+    :global(.swiper-pagination) {
+      bottom: 36px !important;
+      padding: 2px !important;
+      background: var(--bg_dark_grey__white) !important;
+      border-radius: 20px !important;
+      width: initial !important;
+      right: auto !important;
+      left: auto !important;
+    }
+
+    :global(.swiper-pagination-bullet) {
+      width: 10px !important;
+      height: 10px !important;
+      margin: 0 5px !important;
+      background: var(--bg_input_search) !important;
+    }
+
+    :global(.swiper-pagination-bullet-active) {
+      background: var(--btn_color) !important;
+    }
+  }
+
+  .imgWrapper {
+    width: 100%;
+    height: 360px;
+    border-radius: 20px;
+    @include flex(center, center);
+    margin-bottom: 52px;
+    position: relative;
+
+    @media screen and (max-width: $mobileWidth) {
+      height: 206px;
+    }
+
+    img {
+      height: 100%;
+      border-radius: 20px;
+    }
+  }
+
+  .featureWrapper {
+    border: 2px solid var(--bg_input_search);
+    border-radius: 20px;
+    padding: 26px 40px;
+    position: relative;
+    width: 100%;
+    @include flex(null, null, column);
+
+    @media screen and (max-width: $tabletWidth) {
+      padding: 26px 20px;
+    }
+  }
+
+  .title {
+    align-self: center;
+    top: -31px;
+    position: absolute;
+    font-size: 36px;
+    line-height: 52px;
+    padding: 5px 40px;
+    background: var(--bg_dark_grey__white);
+    border-radius: 20px;
+    color: var(--title_color);
+
+    @media screen and (max-width: $mobileWidth) {
+      font-size: 20px;
+      line-height: 29px;
+      top: -20px;
+      padding: 5px 20px;
+    }
+  }
+
+  .subTitle {
+    font-weight: 400;
+    text-align: center;
+    margin: 10px 0 20px;
+  }
+
+  .descWrapper {
+    width: 100%;
+    @include flex(flex-start, flex-start);
+
+    @media screen and (max-width: 768px) {
+      @include flex(space-around, flex-start);
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      @include flex(space-around, flex-start, column);
+    }
+  }
+
+  .left, .right {
+    display: inline-block;
+    max-width: 260px;
+    padding: 10px;
+
+    .withBR {
+      display: block;
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      padding: 0;
+
+      li {
+        padding-bottom: 10px;
+
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .descHighlight {
+    color: var(--title_color);
+    font-weight: 500;
+  }
+}

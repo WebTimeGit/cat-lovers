@@ -1,0 +1,25 @@
+@import "../../../scss/variables";
+
+.wrapper {
+  width: 100%;
+  @include flex(flex-end);
+  min-width: 560px;
+
+  @media screen and (max-width: $tabletWidth) {
+    min-width: 500px;
+  }
+
+  @media screen and (max-width: $mobileWidth) {
+    min-width: initial;
+    max-width: 100%;
+  }
+
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    min-height: 100%;
+  }
+}

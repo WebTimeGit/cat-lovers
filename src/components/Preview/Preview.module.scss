@@ -1,0 +1,37 @@
+.wrapper {
+  border-radius: 20px;
+  width: 100%;
+  min-height: 100%;
+  margin: 0 auto;
+  background: #FBE0DC;
+  position: relative;
+
+  @media (max-width: 1140px) {
+    width: 480px;
+  }
+
+  .imgWrapper {
+    width: 833px;
+    height: 100%;
+    position: absolute;
+    right: -45px;
+    top: -30px;
+
+    @media (max-width: 1430px) {
+      width: 720px;
+    }
+
+    @media (max-width: 1290px) {
+      width: 680px;
+    }
+
+    @media (max-width: 1230px) {
+      width: 600px;
+      margin-right: 40px;
+    }
+
+    @media (max-width: 1140px) {
+      width: 500px;
+    }
+  }
+}

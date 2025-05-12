@@ -1,0 +1,195 @@
+@import "../../scss/variables";
+
+.wrapper {
+  margin-top: 80px;
+
+  @media screen and (max-width: 1030px) {
+    margin-top: 40px;
+  }
+
+  @media screen and (max-width: $tabletWidth) {
+    margin-top: 30px;
+  }
+
+  .headerWrapper {
+    margin-bottom: 60px;
+
+    @media screen and (max-width: 1030px) {
+      margin-bottom: 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 60px;
+    }
+  }
+
+  .cardsDesc {
+    font-size: 20px;
+    line-height: 29px;
+    margin-bottom: 20px;
+    color: var(--title_color);
+
+    @media screen and (max-width: 1030px) {
+      font-size: 15px;
+      line-height: 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 20px;
+      line-height: 29px;
+    }
+  }
+}
+
+.cards {
+  @include flex(space-between);
+  margin-top: 20px;
+  gap: 10px;
+
+  @media screen and (max-width: 1030px) {
+    @include flex(center, center, null);
+    flex-wrap: wrap;
+  }
+
+  @media screen and (max-width: 768px) {
+    @include flex(space-between);
+    flex-wrap: initial;
+  }
+
+  @media screen and (max-width: $mobileWidth) {
+    @include flex(center, center, column);
+  }
+
+}
+
+.cardWrapper {
+  width: 138px;
+  height: 200px;
+  padding: 3px;
+
+  &:hover, &:focus-within {
+    .card {
+      border: 4px solid var(--bg_color);
+
+      + .cardBtn:not(.active) {
+        background: #FBE0DC
+      }
+    }
+
+  }
+
+  &:active {
+    .card {
+      border: 4px solid var(--bg_pink);
+
+      + .cardBtn:not(.active) {
+        background: #FF868E;
+        color: #FFFFFF;
+      }
+    }
+
+  }
+
+  @media screen and (max-width: 1030px) {
+    margin-bottom: 60px;
+    width: 120px;
+    height: 160px;
+  }
+
+  @media screen and (max-width: $tabletWidth) {
+    width: 100px;
+    height: 120px;
+    margin-bottom: 45px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 138px;
+    height: 200px;
+    margin-bottom: initial;
+  }
+
+  @media screen and (max-width: $mobileWidth) {
+    width: 100%;
+    height: auto;
+    padding: initial;
+  }
+
+  .card {
+    width: 100%;
+    height: 100%;
+    max-height: 198px;
+    border: 4px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    @include flex(center, center);
+    cursor: pointer;
+
+    @media screen and (max-width: 1030px) {
+      img {
+        object-fit: contain;
+      }
+    }
+
+    @media screen and (max-width: $mobileWidth) {
+      display: none;
+    }
+
+    .imgWrapper {
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    &.active {
+      border: 4px solid var(--bg_pink);
+    }
+  }
+
+  .cardBtn {
+    margin-top: 20px;
+    display: block;
+    cursor: pointer;
+    height: 46px;
+    @include flex(center, center);
+
+    @media screen and (max-width: $tabletWidth) {
+      margin-top: 10px;
+      height: 30px;
+      @include flex(center, center);
+    }
+
+    @media screen and (max-width: 768px) {
+      height: initial;
+      display: block;
+    }
+
+    &.active {
+      background: #FF868E;
+      color: #FFFFFF;
+    }
+
+    &:hover {
+      background: #FF868E;
+      color: #FFFFFF;
+
+      ~ .card {
+        border: 4px solid var(--bg_color);
+      }
+    }
+  }
+
+  .violet {
+    background: #B4B7FF;
+  }
+
+  .green {
+    background: #97EAB9;
+  }
+
+  .yellow {
+    background: #FFD280;
+  }
+}

@@ -1,0 +1,35 @@
+@import "../../../scss/variables";
+
+.wrapper {
+  flex-grow: 1 !important;
+  position: relative;
+
+  .label {
+    position: absolute;
+    top: -22px;
+    left: 20px;
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+}
+
+.withRefreshBtn {
+  @include flex(space-between, flex-start);
+  gap: 10px;
+
+  @media screen and (max-width: $mobileWidth) {
+
+    button {
+      width: 100%;
+    }
+    @include flex(space-between, flex-start, column);
+  }
+
+  :global(.container-select) {
+    flex-grow: 1 !important;
+
+    @media screen and (max-width: $mobileWidth) {
+      width: 100%;
+    }
+  }
+}

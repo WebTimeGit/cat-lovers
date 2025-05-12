@@ -1,0 +1,19 @@
+@import '../../../scss/variables';
+
+.wrapper {
+  @include flex(flex-start, center, center);
+  margin-bottom: 20px;
+  gap: 10px;
+  position: relative;
+
+  @media screen and (max-width: 1275px) {
+    flex-wrap: wrap;
+  }
+
+  button {
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

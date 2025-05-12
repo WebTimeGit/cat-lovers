@@ -1,0 +1,164 @@
+@import "../../scss/variables";
+
+.wrapper {
+  height: 60px;
+  margin-bottom: 10px;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 1s ease;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "search buttons";
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+    "burger search buttons";
+  }
+
+  @media screen and (max-width: 626px) {
+    height: auto;
+    grid-template-rows:  auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "burger buttons"
+    "search search  ";
+  }
+
+  .inputWrapper {
+    position: relative;
+    height: 60px;
+    max-width: 470px;
+    width: 100%;
+    grid-area: search;
+    flex-grow: 1;
+
+    @media screen and (max-width: 626px) {
+      max-width: initial;
+    }
+
+    button {
+      border: none;
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      right: 10px;
+      top: 10px;
+      color: white;
+      background: var(--bg_input_search);
+      border-radius: 10px;
+      cursor: pointer;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        background: url("../../assets/images/common/search.webp") center no-repeat;
+      }
+
+      &:hover {
+        background: #FF868E;
+
+        &::after {
+          background: url("../../assets/images/common/searchWhite.webp") center no-repeat;
+        }
+      }
+    }
+
+    input {
+      outline: none;
+      border: none;
+      height: 100%;
+      width: 100%;
+      background: var(--bg_white-grey);
+      border-radius: 20px;
+      font-size: 20px;
+      color: #8C8C8C;
+      padding: 0 60px 0 20px;
+
+      @media screen and (max-width: $tabletWidth) {
+        font-size: 17px;
+      }
+
+      @media screen and (max-width: $mobileWidth) {
+        font-size: 20px;
+      }
+
+      @media screen and (max-width: 350px) {
+        font-size: 17px;
+      }
+
+
+      @include placeholder {
+        opacity: .7;
+        @include transition();
+      }
+
+      &:focus {
+        @include transition();
+
+        @include placeholder {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .icons {
+    @include flex(flex-end);
+    gap: 10px;
+    grid-area: buttons;
+
+    .iconWrapper {
+      width: 60px;
+      height: 60px;
+      background: var(--bg_white-grey);
+      border-radius: 20px;
+      @include flex(center, center);
+      cursor: pointer;
+      user-select: none;
+      @include transition();
+
+      svg {
+        fill: #FF868E;
+      }
+
+      &:hover {
+        background: #FBE0DC;
+        @include transition();
+      }
+
+      &:active {
+        background: #FF868E;
+
+        svg {
+          fill: #FFFFFF;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &.iconActive {
+        background: #FF868E;
+
+        svg {
+          fill: #FFFFFF;
+        }
+      }
+    }
+  }
+}
+
+.fadeIn {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 1s ease;
+}

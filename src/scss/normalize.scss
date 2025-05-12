@@ -1,0 +1,50 @@
+@import "variables";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  font-size: 16px;
+  line-height: 26px;
+  background: var(--bg_color);
+  font-family: 'Nunito', sans-serif;
+  width: 100%;
+  color: $main_color;
+
+  &.menu-is-open {
+    overflow: hidden;
+  }
+
+  /*  &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }*/
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-size: 1em;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: $main_color;
+}

@@ -1,0 +1,34 @@
+@import "mixins";
+
+//main
+$bg_light-dark: #282828;
+$main_color: #8C8C8C;
+
+//responsive
+$tabletWidth: 928px;
+$mobileWidth: 567px;
+$smallMobile: 375px;
+
+:root, [data-theme="light"] {
+  --bg_color: #F8F8F7;
+  --bg_grey-white_white-rgba: #F8F8F7;
+  --title_color: #000000;
+  --bg_white-grey: #FFFFFF;
+  --bg_dark_grey__white: #FFFFFF;
+  --btn_color: #FF868E;
+  --bg_input_search: #FBE0DC;
+  --bg_blackWhite: #FFFFFF;
+  --bg_pink: #FBE0DC;
+  --bg_modal: #F8F8F7;
+}
+
+[data-theme="dark"] {
+  --bg_color: #1D1D1D;
+  --title_color: #FFFFFF;
+  --bg_grey-white_white-rgba: #343434;
+  --bg_white-grey: #292929;
+  --bg_dark_grey__white: #282828;
+  --bg_input_search: #543C3D;
+  --bg_blackWhite: #343434;
+  --bg_modal: #282828;
+}

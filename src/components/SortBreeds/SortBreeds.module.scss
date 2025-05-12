@@ -1,0 +1,27 @@
+@import '../../scss/variables';
+
+.wrapper {
+  width: 100%;
+  @include flex(flex-end, center);
+  gap: 10px;
+
+  > div:nth-child(1) {
+    width: 60%;
+
+    @media screen and (max-width: 1275px) {
+      width: 100%;
+    }
+  }
+
+  .withSortButtons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  @media screen and (max-width: $mobileWidth) {
+    @include flex(center, flex-start, column);
+  }
+}
